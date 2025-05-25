@@ -1,0 +1,169 @@
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width,initial-scale=1.0">
+        <title>STUDIO84 SCHOOL OF DANCE</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+                <a href="home.html"><img src="C:\Users\HP\Desktop\dance\project\logo.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-time" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="home.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="course.html">COURSE</a></li>
+                        <li><a href="blog.html">BLOG</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                        <li><a href="login.html">LOGIN</a></li>
+                    </ul> 
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+             <div class="form-box">
+                <div class="button-box">
+                    <div id="bttn"></div>
+                    <button type="button" class="btn" onclick="login()"><b>LOGIN</b></button>
+                    <button type="button" class="btn" onclick="register()"><b>REGISTER</b></button>
+                    <button type="button" class="btn" onclick="admin()"><b>ADMIN</b></button>
+                </div>
+                <div class="sicon">
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-google"></i>
+                </div>
+                <form  id="login" class="input-group">       
+                    <input type="text" class="input-field" id="luid" placeholder="   User Id" required><br><br>
+                    <input type="text" class="input-field" id="lep" placeholder="   Enter Password" required><br><br>
+                    <input type="checkbox" class="check-box"><span>Remember Password</span><br><br><br>
+                    <button type="submit" class="submit-btn" id="login">Login</button> 
+                </form> 
+                <form  id="register" class="input-groupp">       
+                    <input type="text" class="input-fieldd" id="ruid" placeholder=" Enter Full Name" required><br><br>
+                    <input type="text" class="input-fieldd" id="rdob" placeholder=" Date Of Birth" required><br><br>
+                    <input type="text" class="input-fieldd" id="rmn" placeholder=" Mobile No." required><br><br>
+                    <input type="text" class="input-fieldd" id="rei" placeholder=" Enter Email" required><br><br>
+                    <input type="text" class="input-fieldd" id="rea" placeholder=" Enter Address" required><br><br>
+                    <input type="text" class="input-fieldd" id="rep" placeholder="   Enter Password" required><br>
+                    <input type="checkbox" class="check-boxx"><span>I agree to the terms & condition</span><br><br>
+                    <button type="submit" class="submit-btnn" id="register">Register</button> 
+                </form> 
+                <form  id="admin" class="input-group">       
+                    <input type="text" class="input-field" id="aid" placeholder="   Admin Id" required><br><br>
+                    <input type="text" class="input-field" id="aep" placeholder="   Enter Password" required><br><br>
+                    <input type="checkbox" class="check-box"><span>Remember Password</span><br><br><br>
+                    <button type="submit" class="submit-btn" id="admin"> Admin Login</button> 
+                </form> 
+                 
+            </div> 
+        </section>
+       <!---------------Footer------------------>
+
+       <section class="footer">
+        <h3>About Us</h3>
+       <p>We are one of the best Dance Schools Pune. We have Excellent Choroeographer's who have specialized various dance forms.<br>
+       Our specialized dance form is Garba,"The Gujarat tradition we are passionate about!!" </p>
+       <div class="icons">
+           <i class="fa fa-facebook"></i>
+           <i class="fa fa-twitter"></i>
+           <i class="fa fa-instagram"></i>
+           <i class="fa fa-linkedin"></i>
+       </div>
+       <p>Made by <i class="fa fa-heart-o"></i>Soniya Singh and Krishi Taank</p>
+   </section>
+
+        <!-------------------JavaScript for Toggle Menu---------------->
+       <script>
+        var navLinks=document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right="0";
+        }
+        function hideMenu(){
+            navLinks.style.right="-200px";
+        }
+       </script>
+       <script>
+        var x=document.getElementById("login");
+        var y=document.getElementById("register");
+        var z=document.getElementById("admin");
+        var a=document.getElementById("bttn");
+        function register(){
+            x.style.left="-400px";
+            y.style.left="10px";
+            z.style.left="-800px";
+            a.style.left="110px";
+        }
+        function admin(){
+            x.style.left="-800px";
+            y.style.left="-400px";
+            z.style.left="10px";
+            a.style.left="110px";
+        }
+        function login(){
+            x.style.left="10px";
+            y.style.left="400px";
+            z.style.left="400px";
+            a.style.left="110px";
+        }
+        
+       </script>
+       <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+        import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+       
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyB3Oe5cT-JgpoRtWxOwwcmn-EUaQGHFiwY",
+          authDomain: "project-dda6c.firebaseapp.com",
+          projectId: "project-dda6c",
+          storageBucket: "project-dda6c.appspot.com",
+          messagingSenderId: "116908522646",
+          appId: "1:116908522646:web:0bbf3a1ed561f461ac56b7"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+    
+        //get ref to database service
+        const db = getDatabase(app);
+    
+        document.getElementById("login").addEventListener('click',function(e){
+            set(ref(db, 'user/' + document.getElementById("luid").value,),
+        {
+            username: document.getElementById("luid").value,
+            password: document.getElementById("lep").value
+        });
+         //alert("Login Suessfull !");
+        })
+
+        document.getElementById("register").addEventListener('click',function(e){
+            set(ref(db, 'register/'+document.getElementById("ruid").value ),
+        {
+            registerName: document.getElementById("ruid").value,
+            registerDOB: document.getElementById("rdob").value,
+            registerMobileNo: document.getElementById("rmn").value,
+            registerEmail: document.getElementById("rei").value,
+            registerAddress: document.getElementById("rea").value,
+            registerPassword: document.getElementById("rep").value
+        });
+         //alert("Register Suessfull !");
+        })
+
+        document.getElementById("admin").addEventListener('click',function(e){
+            set(ref(db, 'admin/' + document.getElementById("aid").value),
+        {
+            username: document.getElementById("aid").value,
+            password: document.getElementById("aep").value
+        });
+         //alert("Admin Suessfull !");
+        })
+
+        
+      </script>
+
+</body>
+</html>

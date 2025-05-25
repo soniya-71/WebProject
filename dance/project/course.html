@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width,initial-scale=1.0">
+        <title>STUDIO84 SCHOOL OF DANCE</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    </head>
+    <body>
+        <section class="sub-header">
+            <nav>
+                <a href="home.html"><img src="C:\Users\HP\Desktop\dance\project\logo.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-time" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="home.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="course.html">COURSE</a></li>
+                        <li><a href="blog.html">BLOG</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                        <li><a href="login.html">LOGIN</a></li>
+                    </ul> 
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+           <h1>Our Courses</h1>
+        </section>
+       
+        <!---------------------Course-------------------->
+        <section class="course">
+            <h2>Dance Classes We Offer</h2>
+            <p>Nobody cares if you can't dance.Great dancers are great because of their passion.</p>
+            <div class="row">
+                <div class="course-col">
+                    <h3>Classic Dance</h3>
+                    <p>Classical Dance follows the tradition of India.<br>Where India has multiple languages of emotions and there dance forms! </p>
+                </div> 
+                 
+                <div class="course-col">
+                    <h3>Bollywood Dance</h3>
+                    <p>Bollywood Dance style is a fusion of various dance styles</p>
+                </div> 
+                 <br><br>
+                <div class="course-col">
+                    <h3>Garba Dance</h3>
+                    <p>Garba Dance is aform of gujarati dance which originates from the state of Gujarat</p>
+                </div> 
+
+                <div class="course-col">
+                    <h3>Hippop Dance</h3>
+                    <p>Hippop is a street style dance form which is influenced by a wide range of style that were created in the 1970s and made popular by dance crews in the United States</p>
+                </div> 
+            </div>
+        </section>
+        <!-------------------facilities------------------>
+        <section class="facilities">
+            <h2>Our facilities</h2>
+            <p>Facilities is  the one of the trust of our students, parents and our teacher</p>
+            <div class="row">
+            <div class="facilities-col">
+                <img src="C:\Users\HP\Desktop\dance\project\facilities1.jpg">
+                <h3>Locker Room</h3>
+                <p>Locker Room for storing your extre clothes and essesntial items is available!!</p>
+            </div>
+            <div class="facilities-col">
+                <img src="C:\Users\HP\Desktop\dance\project\facilities2.jpg">
+                <h3>Changing Room</h3>
+                <p>Changing Room after freshen up is available!!</p>
+            </div>
+            <div class="facilities-col">
+                <img src="C:\Users\HP\Desktop\dance\project\facilties3.webp">
+                <h3>Photography Room</h3>
+                <p>Photography Room is provided for before and after clicks of the finals of dance performces!!</p>
+            </div>
+            </div>
+        </section>
+        
+        <!---------------Footer------------------>
+
+        <section class="footer">
+            <h3>About Us</h3>
+           <p>We are one of the best Dance Schools Pune. We have Excellent Choroeographer's who have specialized various dance forms.<br>
+           Our specialized dance form is Garba,"The Gujarat tradition we are passionate about!!" </p>
+           <div class="icons">
+               <i class="fa fa-facebook"></i>
+               <i class="fa fa-twitter"></i>
+               <i class="fa fa-instagram"></i>
+               <i class="fa fa-linkedin"></i>
+           </div>
+           <p>Made by <i class="fa fa-heart-o"></i> Soniya Singh and Krishi Taank</p>
+       </section>
+
+        <!-------------------JavaScript for Toggle Menu---------------->
+       <script>
+        var navLinks=document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right="0";
+        }
+        function hideMenu(){
+            navLinks.style.right="-200px";
+        }
+       </script> 
+    </body>
+</html>    

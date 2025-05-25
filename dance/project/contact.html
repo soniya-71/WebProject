@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width,initial-scale=1.0">
+        <title>STUDIO84 SCHOOL OF DANCE</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    </head>
+    <body>
+        <section class="sub-header">
+            <nav>
+                <a href="home.html"><img src="C:\Users\HP\Desktop\dance\project\logo.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-time" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="home.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="course.html">COURSE</a></li>
+                        <li><a href="blog.html">BLOG</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                        <li><a href="login.html">LOGIN</a></li>
+                    </ul> 
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+           <h1>Contact Us</h1>
+        </section>
+       
+        <!---------------------CONTACT US-------------------->
+        <section class="location">
+            <img src="C:\Users\HP\Desktop\dance\project\map.png">
+        </section>
+        <section class="contact-us">
+            <div class="row">
+                <div class="contact-col">
+                    <div>
+                        <i class="fa fa-home"></i>
+                        <span>
+                            <h5>Adresss</h5>
+                            <p>Marathwada Mitra Mandal’s College of Commerce <br>
+                            202 / A, Deccan Gymkhana, Pune - 411004, Maharashtra, INDIA.
+                            </p>
+                        </span> 
+                     </div>
+                     <div>
+                        <i class="fa fa-phone"></i>
+                        <span>
+                            <h5>020 25677932</h5>
+                            <p>Monday to Saturday, 10Am to 5PM</p>
+                        </span> 
+                     </div>
+                     <div>
+                        <i class="fa fa-envelope-o"></i>
+                        <span>
+                            <h5>soniyasingh122002@gmail.com</h5>
+                            <h5>taankkrishi@gamil.com</h5>
+                            <p>Email us for your query</p>
+                        </span> 
+                     </div>
+                </div>
+                <div class="contact-col">
+                    <form action="form.php" method="post">
+                        <input type="text" name="name" id="cen" placeholder="Enter your name" required>
+                        <input type="email" name="email" id="cea" placeholder="Enter email adresss" required>
+                        <input type="text" name="subject" id="ces" placeholder="Enter your subject" required>
+                        <textarea rows="8" name="message"  id="cm"placeholder="Message" required></textarea>
+                        <button type="submit" class="vissit" id="sm" > Send Message</button>
+                </div>
+            </div>
+        </section>
+
+        <!---------------Footer------------------>
+
+        <section class="footer">
+            <h3>About Us</h3>
+           <p>We are one of the best Dance Schools Pune. We have Excellent Choroeographer's who have specialized various dance forms.<br>
+           Our specialized dance form is Garba,"The Gujarat tradition we are passionate about!!" </p>
+           <div class="icons">
+               <i class="fa fa-facebook"></i>
+               <i class="fa fa-twitter"></i>
+               <i class="fa fa-instagram"></i>
+               <i class="fa fa-linkedin"></i>
+           </div>
+           <p>Made by <i class="fa fa-heart-o"></i> Soniya Singh and Krishi Taank</p>
+       </section>
+
+        <!-------------------JavaScript for Toggle Menu---------------->
+       <script>
+        var navLinks=document.getElementById("navLinks");
+        function showMenu(){
+            navLinks.style.right="0";
+        }
+        function hideMenu(){
+            navLinks.style.right="-200px";
+        }
+       </script> 
+        <script type="module">
+         // Import the functions you need from the SDKs you need
+         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+         import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+        
+         // Your web app's Firebase configuration
+         const firebaseConfig = {
+           apiKey: "AIzaSyB3Oe5cT-JgpoRtWxOwwcmn-EUaQGHFiwY",
+           authDomain: "project-dda6c.firebaseapp.com",
+           projectId: "project-dda6c",
+           storageBucket: "project-dda6c.appspot.com",
+           messagingSenderId: "116908522646",
+           appId: "1:116908522646:web:0bbf3a1ed561f461ac56b7"
+         };
+       
+         // Initialize Firebase
+         const app = initializeApp(firebaseConfig);
+     
+         //get ref to database service
+         const db = getDatabase(app);
+     
+         document.getElementById("sm").addEventListener('click',function(e){
+             set(ref(db, 'contact/'+document.getElementById("cen").value ),
+         {
+            contactName: document.getElementById("cen").value,
+            contactAddress: document.getElementById("cea").value,
+            contasubject: document.getElementById("ces").value,
+            contactmessage: document.getElementById("cm").value,
+            
+         });
+          //alert("Send Suessfull !");
+         })
+ 
+       </script>
+    </body>
+</html>    
